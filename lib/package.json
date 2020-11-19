@@ -1,0 +1,34 @@
+{
+  "name": "@watch-state/history-api",
+  "version": "1.0.0",
+  "description": "Browser History API with watch-state",
+  "main": "index.js",
+  "module": "index.es6.js",
+  "jsnext:main": "index.es6.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d8corp/watch-state-history-api.git"
+  },
+  "keywords": [
+    "history",
+    "History api",
+    "routing",
+    "router",
+    "route",
+    "watch",
+    "state",
+    "url",
+    "front-end"
+  ],
+  "author": "Mikhail Lysikov <d8corp@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d8corp/watch-state-history-api/issues"
+  },
+  "homepage": "https://github.com/d8corp/watch-state-history-api",
+  "dependencies": {
+    "tslib": ">=2",
+    "watch-state": "^1.0.1"
+  }
+}
