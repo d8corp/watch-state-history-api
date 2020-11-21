@@ -259,11 +259,11 @@ When you use `scroll-behavior` equals `smooth` you can get callback when the scr
 scroll(0, () => console.log('scrolling is finished'))
 ```
 ## Example
-```javascript
+```typescript jsx
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import History from '@watch-state/history-api'
-import {watch} from '@watch-state/react'
+import watch from '@watch-state/react'
 
 const history = new History()
 
