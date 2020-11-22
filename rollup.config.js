@@ -16,6 +16,10 @@ const def = {
   ]
 }
 
+const exclude = [
+  'src/**/*.test.ts'
+]
+
 export default [{
   ...def,
   output: {
@@ -26,6 +30,9 @@ export default [{
   plugins: [
     typescript({
       typescript: require('typescript'),
+      tsconfigOverride: {
+        exclude
+      }
     })
   ]
 }, {
@@ -41,7 +48,8 @@ export default [{
       tsconfigOverride: {
         compilerOptions: {
           target: 'es6'
-        }
+        },
+        exclude
       }
     })
   ]
