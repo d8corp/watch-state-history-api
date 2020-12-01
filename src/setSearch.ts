@@ -1,9 +1,16 @@
 import parseUrl from './parseUrl'
-import removeSearch from './removeSearch'
 
-export default function setSearch (url: string, key: string, value?: string): string {
+export default function setSearch (url: string, key: string | Record<string, string | undefined>, value?: string): string {
+  if (typeof key === 'object') {
+    for (const param in key) {
+      url = setSearch(url, param, key[param])
+    }
+    return url
+  }
   if (value === undefined) {
-    return removeSearch(url, key)
+    const {path = '', search = '', hash = ''} = parseUrl(url)
+    const newSearch = search.replace(new RegExp(`(^|&)${key}(=[^&]*)?(&|$)`), '&').replace(/(^&|&$)/, '')
+    return path + (newSearch ? '?' + newSearch : '') + (hash ? '#' + hash : '')
   }
   const {path = '', search = '', hash = ''} = parseUrl(url)
   let newSearch = ''

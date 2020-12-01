@@ -8,7 +8,6 @@ const def = {
     scroll: 'src/scroll.ts',
     decode: 'src/decode.ts',
     setSearch: 'src/setSearch.ts',
-    removeSearch: 'src/removeSearch.ts',
     parseUrl: 'src/parseUrl.ts',
   },
   external: [
