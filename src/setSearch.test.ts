@@ -38,6 +38,9 @@ describe('setSearch', () => {
     expect(setSearch('/', {key: ''})).toBe('/?key')
     expect(setSearch('/', {key: 'value'})).toBe('/?key=value')
     expect(setSearch('', {key: 'value'})).toBe('?key=value')
-    expect(setSearch('?key', {key: undefined})).toBe('')
+    expect(setSearch('?key', {key: undefined, test: 1})).toBe('?test=1')
+  })
+  it('boolean', () => {
+    expect(setSearch('/', {key: true})).toBe('/?key=true')
   })
 })

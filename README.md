@@ -240,6 +240,12 @@ import {setSearch} from '@watch-state/history-api'
 
 setSearch('/test?key=value', 'key') // "/test"
 ```
+Use an object as the second argument to set several options
+```javascript
+import {setSearch} from '@watch-state/history-api'
+
+setSearch('/test?key=value', {key: undefined, test: 1}) // "/test?test=1"
+```
 ### scroll
 You can scroll the current page with `scroll` function.  
 `scroll(position: number | string, callback?: function): this`
