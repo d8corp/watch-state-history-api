@@ -8,7 +8,6 @@ declare type State = {
     key: string;
     steps: Steps;
 };
-declare type ScrollCallback = () => any | void;
 declare type BackChk = (url: string) => boolean;
 declare class History {
     constructor(locales?: string, key?: string);
@@ -41,11 +40,9 @@ declare class History {
     go(delta: number): this;
     replace(url: string, position?: number | string, scrollFirst?: boolean): this;
     push(url: string, position?: number | string, scrollFirst?: boolean): this;
-    /** @deprecated - please, use addition function `scroll` from the package */
-    scroll(position: number | string, callback?: ScrollCallback): this;
     is(reg: string): boolean;
     get(reg: string, index?: number, defaultValue?: string): string;
     protected changeState(callback: (newUrl: string) => void, locale: string, url: string, position: number | string, scrollFirst?: boolean): void;
 }
 export default History;
-export { Step, Steps, State, ScrollCallback, BackChk };
+export { Step, Steps, State, BackChk };

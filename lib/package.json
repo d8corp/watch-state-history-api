@@ -1,6 +1,6 @@
 {
   "name": "@watch-state/history-api",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Browser History API with watch-state",
   "main": "index.js",
   "module": "index.es6.js",
@@ -29,6 +29,6 @@
   "homepage": "https://github.com/d8corp/watch-state-history-api",
   "dependencies": {
     "tslib": ">=2",
-    "watch-state": ">=1.0.2"
+    "watch-state": ">=1.1.0"
   }
 }
