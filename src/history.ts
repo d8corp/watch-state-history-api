@@ -10,7 +10,6 @@ type State = {
   key: string
   steps: Steps
 }
-type ScrollCallback = () => any | void
 type BackChk = (url: string) => boolean
 
 class History {
@@ -156,11 +155,6 @@ class History {
     }, this.locale, url, position, scrollFirst)
     return this
   }
-  /** @deprecated - please, use addition function `scroll` from the package */
-  public scroll (position: number | string, callback?: ScrollCallback): this {
-    scroll(position, callback)
-    return this
-  }
   public is (reg: string): boolean {
     if (!this.isCache) {
       this.isCache = {}
@@ -213,6 +207,5 @@ export {
   Step,
   Steps,
   State,
-  ScrollCallback,
   BackChk
 }

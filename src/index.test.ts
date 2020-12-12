@@ -226,7 +226,7 @@ describe('history-api', () => {
     })
     it('position', () => {
       resetHistory('/')
-      history.scroll(100)
+      scroll(100)
       expect(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0).toBe(100)
       history.push('/test')
       expect(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0).toBe(0)
