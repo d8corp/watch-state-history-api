@@ -1,4 +1,7 @@
 # Changelog
+## v1.2
+### v1.2.0 [![11.01.2021](https://img.shields.io/date/1610394742)](https://github.com/d8corp/watch-state-history-api/tree/v1.2.0)
+- updated `watch-state` to the second version
 ## v1.1
 ### v1.1.0 [![12.12.2020](https://img.shields.io/date/1607798652)](https://github.com/d8corp/watch-state-history-api/tree/v1.1.0)
 - now you can use number and boolean as value of query param in `setSearch`

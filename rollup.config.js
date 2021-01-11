@@ -16,40 +16,40 @@ const def = {
 }
 
 const exclude = [
-  'src/**/*.test.ts'
+  '**/*.test.ts'
 ]
 
 export default [{
   ...def,
   output: {
-    dir: 'lib',
+    dir: './lib',
     entryFileNames: '[name]' + pkg.main.replace('index', ''),
-    format: 'cjs'
+    format: 'cjs',
   },
   plugins: [
     typescript({
       typescript: require('typescript'),
       tsconfigOverride: {
-        exclude
+        exclude,
       }
-    })
+    }),
   ]
 }, {
   ...def,
   output: {
-    dir: 'lib',
+    dir: './lib',
     entryFileNames: '[name]' + pkg.module.replace('index', ''),
-    format: 'es'
+    format: 'es',
   },
   plugins: [
     typescript({
       typescript: require('typescript'),
       tsconfigOverride: {
         compilerOptions: {
-          target: 'es6'
+          target: 'es6',
         },
-        exclude
+        exclude,
       }
-    })
+    }),
   ]
 }]
