@@ -1,8 +1,8 @@
 # @watch-state/history-api
 [![NPM](https://img.shields.io/npm/v/@watch-state/history-api.svg)](https://github.com/d8corp/watch-state-history-api/blob/master/CHANGELOG.md)
-[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmjs.com/package/watch-state-history-api)
+[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmjs.com/package/@watch-state/history-api)
 [![license](https://img.shields.io/npm/l/@watch-state/history-api)](https://github.com/d8corp/watch-state-history-api/blob/master/LICENSE)
-  
+
 Browser History API with [watch-state](https://www.npmjs.com/package/watch-state).
 ### Installation
 npm
@@ -264,6 +264,7 @@ When you use `scroll-behavior` equals `smooth` you can get callback when the scr
 ```javascript
 scroll(0, () => console.log('scrolling is finished'))
 ```
+More details [here](https://github.com/d8corp/web-scroll)
 ## Example
 ```typescript jsx
 import React, {Component} from 'react'

@@ -1,5 +1,5 @@
 import {event, cache, state, Cache} from 'watch-state'
-import scroll from './scroll'
+import scroll from 'web-scroll'
 
 type Step = {
   url: string
@@ -52,6 +52,10 @@ class History {
     this._url = pathname + search + hash
     if (!state || this.key !== state.key || (oldState && this.key === oldState.key && oldState.steps.length > state.steps.length)) {
       this.movement = 'back'
+      scroll({
+        position: oldState.steps[oldState.steps.length - 1].position,
+        attempts: 3,
+      })
     } else {
       this.movement = 'forward'
     }

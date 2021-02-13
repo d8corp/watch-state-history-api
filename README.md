@@ -264,6 +264,7 @@ When you use `scroll-behavior` equals `smooth` you can get callback when the scr
 ```javascript
 scroll(0, () => console.log('scrolling is finished'))
 ```
+More details [here](https://github.com/d8corp/web-scroll)
 ## Example
 ```typescript jsx
 import React, {Component} from 'react'

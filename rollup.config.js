@@ -5,7 +5,6 @@ const def = {
   input: {
     index: 'src/index.ts',
     history: 'src/history.ts',
-    scroll: 'src/scroll.ts',
     decode: 'src/decode.ts',
     setSearch: 'src/setSearch.ts',
     parseUrl: 'src/parseUrl.ts',

@@ -1,5 +1,7 @@
 # Changelog
 ## v1.2
+### v1.2.1 [![13.02.2021](https://img.shields.io/date/1613234105)](https://github.com/d8corp/watch-state-history-api/tree/v1.2.1)
+- fixed a bug of history back action scroll
 ### v1.2.0 [![11.01.2021](https://img.shields.io/date/1610394742)](https://github.com/d8corp/watch-state-history-api/tree/v1.2.0)
 - updated `watch-state` to the second version
 ## v1.1
