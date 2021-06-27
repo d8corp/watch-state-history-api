@@ -6,7 +6,7 @@
 
 [![NPM](https://img.shields.io/npm/v/@watch-state/history-api.svg)](https://www.npmjs.com/package/@watch-state/history-api)
 [![minzipped size](https://img.shields.io/bundlephobia/minzip/@watch-state/history-api)](https://bundlephobia.com/result?p=@watch-state/history-api)
-[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://bundlephobia.com/result?p=@watch-state/history-api)
+[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmtrends.com/@watch-state/history-api)
 [![changelog](https://img.shields.io/badge/changelog-⋮-brightgreen)](https://changelogs.xyz/@watch-state/history-api)
 [![license](https://img.shields.io/npm/l/@watch-state/history-api)](https://github.com/d8corp/watch-state-history-api/blob/master/LICENSE)
 

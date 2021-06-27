@@ -1,4 +1,8 @@
 # Changelog
+## v1.3
+### v1.3.0 [![27.06.2021](https://img.shields.io/date/1624785965)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.0)
+- updated [watch-state](https://www.npmjs.com/package/watch-state) version 3
+- added current version by default key of `History`
 ## v1.2
 ### v1.2.1 [![13.02.2021](https://img.shields.io/date/1613234105)](https://github.com/d8corp/watch-state-history-api/tree/v1.2.1)
 - fixed a bug of history back action scroll

@@ -1,9 +1,20 @@
-# @watch-state/history-api
-[![NPM](https://img.shields.io/npm/v/@watch-state/history-api.svg)](https://github.com/d8corp/watch-state-history-api/blob/master/CHANGELOG.md)
-[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmjs.com/package/@watch-state/history-api)
+<a href="https://www.npmjs.com/package/watch-state"><img src="https://raw.githubusercontent.com/d8corp/watch-state/v3/img/logo.svg" align="left" width="90" height="90" alt="Watch-State logo by Mikhail Lysikov"></a>
+
+# &nbsp; @watch-state/history-api
+
+&nbsp;  
+
+[![NPM](https://img.shields.io/npm/v/@watch-state/history-api.svg)](https://www.npmjs.com/package/@watch-state/history-api)
+[![minzipped size](https://img.shields.io/bundlephobia/minzip/@watch-state/history-api)](https://bundlephobia.com/result?p=@watch-state/history-api)
+[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmtrends.com/@watch-state/history-api)
+[![changelog](https://img.shields.io/badge/changelog-⋮-brightgreen)](https://changelogs.xyz/@watch-state/history-api)
 [![license](https://img.shields.io/npm/l/@watch-state/history-api)](https://github.com/d8corp/watch-state-history-api/blob/master/LICENSE)
 
 Browser History API with [watch-state](https://www.npmjs.com/package/watch-state).
+
+[![stars](https://img.shields.io/github/stars/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/stargazers)
+[![watchers](https://img.shields.io/github/watchers/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/watchers)
+
 ### Installation
 npm
 ```bash
@@ -265,7 +276,7 @@ When you use `scroll-behavior` equals `smooth` you can get callback when the scr
 scroll(0, () => console.log('scrolling is finished'))
 ```
 More details [here](https://github.com/d8corp/web-scroll)
-## Example
+## React Example
 ```typescript jsx
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
@@ -290,9 +301,6 @@ history.push('/test')
 // now the root element contains '/test' 
 ``` 
 ## Issues
-If you find a bug, please file an issue on [GitHub](https://github.com/d8corp/watch-state-history-api/issues)  
-[![issues](https://img.shields.io/github/issues-raw/d8corp/watch-state-history-api)](https://github.com/d8corp/watch-state-history-api/issues)  
-> ---
-[![stars](https://img.shields.io/github/stars/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/stargazers)
-[![watchers](https://img.shields.io/github/watchers/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/watchers)
+If you find a bug, please file an issue on [GitHub](https://github.com/d8corp/watch-state-history-api/issues)
 
+[![issues](https://img.shields.io/github/issues-raw/d8corp/watch-state-history-api)](https://github.com/d8corp/watch-state-history-api/issues)
