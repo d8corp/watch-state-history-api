@@ -1,5 +1,7 @@
 # Changelog
 ## v1.3
+### v1.3.1 [![27.06.2021](https://img.shields.io/date/1624786974)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.1)
+- fixed `tslib` dependency
 ### v1.3.0 [![27.06.2021](https://img.shields.io/date/1624785965)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.0)
 - updated [watch-state](https://www.npmjs.com/package/watch-state) version 3
 - added current version by default key of `History`
