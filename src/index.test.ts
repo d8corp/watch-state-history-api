@@ -1,5 +1,6 @@
 import History, {scroll} from '.'
 import {Watch} from 'watch-state'
+import {version} from '../package.json'
 
 let history = new History()
 
@@ -9,7 +10,7 @@ function resetHistory (url = '/', locale?) {
   history = new History(locale)
 }
 
-const key = 'history-api v1.0'
+const key = 'history-api ' + version
 
 describe('history-api', () => {
   describe('constructor', () => {

@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import json from '@rollup/plugin-json'
 import pkg from './package.json'
 
 const def = {
@@ -26,6 +27,7 @@ export default [{
     format: 'cjs',
   },
   plugins: [
+    json(),
     typescript({
       typescript: require('typescript'),
       tsconfigOverride: {
@@ -41,6 +43,7 @@ export default [{
     format: 'es',
   },
   plugins: [
+    json(),
     typescript({
       typescript: require('typescript'),
       tsconfigOverride: {

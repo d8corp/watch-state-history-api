@@ -1,19 +1,21 @@
-import {event, cache, state, Cache} from 'watch-state'
+import {Cache} from 'watch-state'
+import {cache, state, event} from '@watch-state/decorators'
 import scroll from 'web-scroll'
+import {version} from '../package.json'
 
-type Step = {
+export type Step = {
   url: string
   position: number
 }
-type Steps = Step[]
-type State = {
+export type Steps = Step[]
+export type State = {
   key: string
   steps: Steps
 }
-type BackChk = (url: string) => boolean
+export type BackChk = (url: string) => boolean
 
-class History {
-  constructor (locales: string = '', key = 'history-api v1.0') {
+export class History {
+  constructor (locales = '', key = 'history-api ' + version) {
     this.locales = locales
     this.key = key
     this.defaultState = {
@@ -165,7 +167,7 @@ class History {
     }
     if (!this.isCache[reg]) {
       const regExp = new RegExp(reg)
-      this.isCache[reg] = new Cache(() => regExp.test(this.url))
+      this.isCache[reg] = new Cache(() => regExp.test(this.url), false)
     }
     return this.isCache[reg].value
   }
@@ -181,7 +183,7 @@ class History {
       this.getCache[index][reg] = new Cache(() => {
         const result = regExp.exec(this.url)
         return result ? result[index] || '' : defaultValue
-      })
+      }, false)
     }
     return this.getCache[index][reg].value
   }
@@ -206,10 +208,3 @@ class History {
 }
 
 export default History
-
-export {
-  Step,
-  Steps,
-  State,
-  BackChk
-}
