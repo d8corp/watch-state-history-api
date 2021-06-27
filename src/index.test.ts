@@ -1,6 +1,6 @@
 import History, {scroll} from '.'
 import {Watch} from 'watch-state'
-import {version} from '../package.json'
+import {version} from './package.json'
 
 let history = new History()
 

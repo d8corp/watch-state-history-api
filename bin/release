@@ -64,6 +64,7 @@ async function changePackage () {
   }
   packageJSON.version = version.join('.')
   await getPromise(resolve => fs.writeFile(__dirname + '/../package.json', JSON.stringify(packageJSON, null, 2) + '\n', 'utf8', resolve))
+  await getPromise(resolve => fs.writeFile(__dirname + '/../src/package.json', JSON.stringify(packageJSON, null, 2) + '\n', 'utf8', resolve))
   consoleEnd('change version in package.json')
 }
 async function copyPackage () {

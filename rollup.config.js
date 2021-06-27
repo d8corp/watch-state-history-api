@@ -1,57 +1,51 @@
 import typescript from 'rollup-plugin-typescript2'
 import json from '@rollup/plugin-json'
+import glob from 'glob'
+
 import pkg from './package.json'
 
-const def = {
-  input: {
-    index: 'src/index.ts',
-    history: 'src/history.ts',
-    decode: 'src/decode.ts',
-    setSearch: 'src/setSearch.ts',
-    parseUrl: 'src/parseUrl.ts',
-  },
-  external: [
-    ...Object.keys(pkg.dependencies || {})
-  ]
-}
+const input = glob.sync('{src/index.ts,src/**/index.ts}')
+const external = Object.keys(pkg.dependencies || {})
 
-const exclude = [
-  '**/*.test.ts'
+export default [
+  {
+    input,
+    external,
+    output: {
+      dir: 'lib',
+      entryFileNames: '[name].js',
+      format: 'cjs',
+      preserveModules: true,
+    },
+    plugins: [
+      json(),
+      typescript({
+        rollupCommonJSResolveHack: false,
+        clean: true,
+      }),
+    ]
+  },
+  {
+    input,
+    external,
+    output: {
+      dir: 'lib',
+      entryFileNames: '[name].es6.js',
+      format: 'es',
+      preserveModules: true,
+      preserveModulesRoot: 'src'
+    },
+    plugins: [
+      json(),
+      typescript({
+        rollupCommonJSResolveHack: false,
+        clean: true,
+        tsconfigOverride: {
+          compilerOptions: {
+            target: 'es6',
+          }
+        }
+      }),
+    ]
+  }
 ]
-
-export default [{
-  ...def,
-  output: {
-    dir: './lib',
-    entryFileNames: '[name]' + pkg.main.replace('index', ''),
-    format: 'cjs',
-  },
-  plugins: [
-    json(),
-    typescript({
-      typescript: require('typescript'),
-      tsconfigOverride: {
-        exclude,
-      }
-    }),
-  ]
-}, {
-  ...def,
-  output: {
-    dir: './lib',
-    entryFileNames: '[name]' + pkg.module.replace('index', ''),
-    format: 'es',
-  },
-  plugins: [
-    json(),
-    typescript({
-      typescript: require('typescript'),
-      tsconfigOverride: {
-        compilerOptions: {
-          target: 'es6',
-        },
-        exclude,
-      }
-    }),
-  ]
-}]

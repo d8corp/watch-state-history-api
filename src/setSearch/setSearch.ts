@@ -1,4 +1,4 @@
-import parseUrl from './parseUrl'
+import parseUrl from '../parseUrl'
 
 export default function setSearch (url: string, key: string | Record<string, string | undefined | number | boolean>, value?: string | number | boolean): string {
   if (typeof key === 'object') {
