@@ -167,7 +167,7 @@ export class History {
     }
     if (!this.isCache[reg]) {
       const regExp = new RegExp(reg)
-      this.isCache[reg] = new Cache(() => regExp.test(this.url), false)
+      this.isCache[reg] = new Cache(() => regExp.test(this.url), true)
     }
     return this.isCache[reg].value
   }
@@ -183,7 +183,7 @@ export class History {
       this.getCache[index][reg] = new Cache(() => {
         const result = regExp.exec(this.url)
         return result ? result[index] || '' : defaultValue
-      }, false)
+      }, true)
     }
     return this.getCache[index][reg].value
   }
