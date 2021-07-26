@@ -13,6 +13,9 @@ function resetHistory (url = '/', locale?) {
 const key = 'history-api ' + version
 
 describe('history-api', () => {
+  test('first push bug', () => {
+    history.push('/')
+  })
   describe('constructor', () => {
     it('constructor', () => {
       resetHistory('/')

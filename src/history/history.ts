@@ -84,6 +84,7 @@ export class History {
             position
           }]
         }, null, newUrl)
+        this.onChange(window.history.state)
       }, locale, url, -1)
     }
   }
@@ -143,6 +144,7 @@ export class History {
     this.changeState(newUrl => {
       window.history.replaceState(this.state, null, newUrl)
     }, this.locale, url, position, scrollFirst)
+    this.onChange(window.history.state)
     return this
   }
   public push (url: string, position: number | string = 0, scrollFirst = false): this {
@@ -157,6 +159,7 @@ export class History {
             position: top
           }]
         }, null, newUrl)
+        this.onChange(window.history.state)
       }
     }, this.locale, url, position, scrollFirst)
     return this
@@ -196,7 +199,6 @@ export class History {
       } else {
         callback(url)
       }
-      this.onChange(window.history.state)
     }
     if (scrollFirst) {
       scroll(position, mainCallback)

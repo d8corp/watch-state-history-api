@@ -1,6 +1,13 @@
 # Changelog
 
 ## v1.3
+### v1.3.5 [![26.07.2021](https://img.shields.io/date/1627328144)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.5)
+- hot fixes of the build flow
+
+### v1.3.4 [![26.07.2021](https://img.shields.io/date/1627327647)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.4)
+- updated [@watch-state/decorators](https://github.com/d8corp/watch-state-decorators/tree/v1.2.0) version to `v1.2`
+- fixed bag when you push the same url as you have and history state is empty (*first time opened page*)
+
 ### v1.3.3 [![10.07.2021](https://img.shields.io/date/1625947964)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.3)
 - updated [watch-state](https://github.com/d8corp/watch-state/releases/tag/v3.3.3) version
 

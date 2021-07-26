@@ -7,6 +7,11 @@ import pkg from './package.json'
 const input = glob.sync('{src/index.ts,src/**/index.ts}')
 const external = Object.keys(pkg.dependencies || {})
 
+const exclude = [
+  'src/**/*.test.ts',
+  'src/**/*.test.tsx',
+]
+
 export default [
   {
     input,
@@ -22,6 +27,7 @@ export default [
       typescript({
         rollupCommonJSResolveHack: false,
         clean: true,
+        tsconfigOverride: {exclude},
       }),
     ]
   },
@@ -41,6 +47,7 @@ export default [
         rollupCommonJSResolveHack: false,
         clean: true,
         tsconfigOverride: {
+          exclude,
           compilerOptions: {
             target: 'es6',
           }
