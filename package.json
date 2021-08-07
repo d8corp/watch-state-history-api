@@ -1,6 +1,6 @@
 {
   "name": "@watch-state/history-api",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "Browser History API with watch-state",
   "main": "index.js",
   "module": "index.es6.js",
@@ -50,9 +50,9 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@watch-state/decorators": "^1.2.0",
+    "@watch-state/decorators": "^1.2.1",
     "tslib": "^2.3.0",
-    "watch-state": "^3.3.3",
+    "watch-state": "^3.4.0",
     "web-scroll": "^1.0.0"
   }
 }

@@ -1,6 +1,9 @@
 # Changelog
 
 ## v1.3
+### v1.3.6 [![07.08.2021](https://img.shields.io/date/1628366228)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.6)
+- updated dependencies
+
 ### v1.3.5 [![26.07.2021](https://img.shields.io/date/1627328144)](https://github.com/d8corp/watch-state-history-api/tree/v1.3.5)
 - hot fixes of the build flow
 
