@@ -35,16 +35,16 @@ export class History {
     this.destructor = () => window.removeEventListener('popstate', listener)
   }
 
-  public readonly destructor: () => void
+  readonly destructor: () => void
   protected readonly defaultState: State
   protected readonly key: string
 
   protected getCache: {[reg: number]: {[index: string]: Cache<string>}}
   protected isCache: {[reg: string]: Cache<boolean>}
 
-  @state public movement: 'back' | 'forward' | undefined
-  @state public state: State
-  @state public locales: string
+  @state movement: 'back' | 'forward' | undefined
+  @state state: State
+  @state locales: string
   @state protected _url: string = location.pathname + location.search + location.hash
 
   @event protected onChange (state: State) {
@@ -63,7 +63,7 @@ export class History {
     }
   }
 
-  @cache public get locale (): string {
+  @cache get locale (): string {
     const {locales} = this
     if (locales) {
       const match = this._url.match(new RegExp(`^/(${locales})(/|\\?|#|$)`))
@@ -71,7 +71,7 @@ export class History {
     }
     return ''
   }
-  public set locale (locale: string) {
+  set locale (locale: string) {
     const {locales, locale: currentLocale} = this
     if (locales && locale !== currentLocale && (!locale || new RegExp(`^(${locales})$`).test(locale))) {
       const {url, state: {steps}} = this
@@ -88,29 +88,33 @@ export class History {
       }, locale, url, -1)
     }
   }
-  public get localUrl (): string {
+  get localUrl (): string {
     return this._url
   }
 
-  @cache public get url (): string {
+  @cache get url (): string {
     const {locales, _url} = this
     return locales ? _url.replace(new RegExp(`^/(${locales})((/)|(\\?|#|$))`), '/$4') : _url
   }
-  @cache public get path (): string {
+  @cache get path (): string {
     return this.url.replace(/[?#].*/, '')
   }
-  @cache public get hash (): string {
+  @cache get hash (): string {
     const math = this.url.match(/^[^#]*#(.+)/)
     return math ? math[1] : ''
   }
-  @cache public get href (): string {
+  @cache get href (): string {
     return this.url.replace(/#.*/, '')
   }
-  public search (key: string): string {
+  @cache get search (): string {
+    const math = this.url.match(/^[^#?]*\?([^#]+)/)
+    return math ? math[1] : ''
+  }
+  getSearch (key: string): string  {
     return this.get(`^[^?#]*\\?([^#]*\\&)*${key}=([^#&]*)`, 2)
   }
 
-  public back (is?: RegExp | BackChk, def = '/', scrollFirst = false): this {
+  back (is?: RegExp | BackChk, def = '/', scrollFirst = false): this {
     if (is) {
       if (typeof is !== 'function') {
         const regexp = is
@@ -132,22 +136,22 @@ export class History {
     }
     return this
   }
-  public forward (): this {
+  forward (): this {
     window.history.forward()
     return this
   }
-  public go (delta: number): this {
+  go (delta: number): this {
     window.history.go(delta)
     return this
   }
-  public replace (url: string, position: number | string = 0, scrollFirst = false): this {
+  replace (url: string, position: number | string = 0, scrollFirst = false): this {
     this.changeState(newUrl => {
       window.history.replaceState(this.state, null, newUrl)
     }, this.locale, url, position, scrollFirst)
     this.onChange(window.history.state)
     return this
   }
-  public push (url: string, position: number | string = 0, scrollFirst = false): this {
+  push (url: string, position: number | string = 0, scrollFirst = false): this {
     const {url: currentUrl, state: {steps}} = this
     const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
     this.changeState(newUrl => {
@@ -164,7 +168,7 @@ export class History {
     }, this.locale, url, position, scrollFirst)
     return this
   }
-  public is (reg: string): boolean {
+  is (reg: string): boolean {
     if (!this.isCache) {
       this.isCache = {}
     }
@@ -174,7 +178,7 @@ export class History {
     }
     return this.isCache[reg].value
   }
-  public get (reg: string, index = 0, defaultValue = ''): string {
+  get (reg: string, index = 0, defaultValue = ''): string {
     if (!this.getCache) {
       this.getCache = {}
     }

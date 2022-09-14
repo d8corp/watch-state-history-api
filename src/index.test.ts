@@ -238,7 +238,7 @@ describe('history-api', () => {
       expect(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0).toBe(100)
     })
   })
-  it('path', () => {
+  test('path', () => {
     const result = []
 
     history.push('/test')
@@ -269,49 +269,78 @@ describe('history-api', () => {
     expect(result.length).toBe(2)
     expect(result[1]).toBe('/test/1')
   })
-  it('search', () => {
+  test('search', () => {
     const result = []
 
     history.push('/test?key=1')
 
 
-    new Watch(() => result.push(history.search('key')))
+    new Watch(() => result.push(history.search))
 
-    expect(history.search('key')).toBe('1')
+    expect(history.search).toBe('key=1')
+    expect(result.length).toBe(1)
+    expect(result[0]).toBe('key=1')
+
+    history.push('/test?key=1&value=1')
+
+    expect(history.search).toBe('key=1&value=1')
+    expect(result.length).toBe(2)
+    expect(result[1]).toBe('key=1&value=1')
+
+    history.push('/test?key=1&value=1#hash')
+
+    expect(history.search).toBe('key=1&value=1')
+    expect(result.length).toBe(2)
+
+    history.push('/test?key=2#hash')
+
+    expect(history.search).toBe('key=2')
+    expect(result.length).toBe(3)
+    expect(result[2]).toBe('key=2')
+  })
+  test('getSearch', () => {
+    const result = []
+
+    history.push('/test?key=1')
+
+
+    new Watch(() => result.push(history.getSearch('key')))
+
+    expect(history.getSearch('key')).toBe('1')
     expect(result.length).toBe(1)
     expect(result[0]).toBe('1')
 
     history.push('/test?key=1&value=1')
 
-    expect(history.search('key')).toBe('1')
-    expect(history.search('value')).toBe('1')
+    expect(history.getSearch('key')).toBe('1')
+    expect(history.getSearch('value')).toBe('1')
     expect(result.length).toBe(1)
 
     history.push('/test?key=2#hash')
 
-    expect(history.search('key')).toBe('2')
+    expect(history.getSearch('key')).toBe('2')
     expect(result.length).toBe(2)
     expect(result[1]).toBe('2')
 
     history.push('/test?key=2&key=1')
 
-    expect(history.search('key')).toBe('1')
+    expect(history.getSearch('key')).toBe('1')
     expect(result.length).toBe(3)
     expect(result[2]).toBe('1')
 
     history.push('/test?key=2&key=1#hash')
 
-    expect(history.search('key')).toBe('1')
+    expect(history.getSearch('key')).toBe('1')
     expect(result.length).toBe(3)
 
     history.push('/test?key=0&key=1#hash')
 
-    expect(history.search('key')).toBe('1')
+    expect(history.getSearch('key')).toBe('1')
     expect(result.length).toBe(3)
 
     history.push('/test?key=0&key=3#hash')
 
-    expect(history.search('key')).toBe('3')
+    expect(history.getSearch('key')).toBe('3')
     expect(result.length).toBe(4)
     expect(result[3]).toBe('3')
   })

@@ -55,6 +55,13 @@ history.path // current pathname
 ``` 
 *`path` does not include locale*
 
+### search ![string](https://img.shields.io/badge/-string-green)
+
+This is an observable field, returns current search of URL.  
+```javascript
+history.search
+```  
+
 ### hash ![string](https://img.shields.io/badge/-string-green)
 
 This is an observable field, returns current hash of URL.  
@@ -149,16 +156,16 @@ history.state // {key: '...', steps: [{...}, {...}]}
 ```
 
 ## Methods
-### search
+### getSearch
 
 This is an observable method.  
 That means you can use the method inside a watcher of `watch-state`,
 when result of the function changed the `reaction` be called.  
 
 The method returns the value of the provided `key` in the URL query.   
-`search(key: string): string`
+`getSearch(key: string): string`
 ```javascript
-history.search('key') // returns 'value' for url equals '?key=value'
+history.getSearch('key') // returns 'value' for url equals '?key=value'
 ```
 
 ### push

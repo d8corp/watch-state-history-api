@@ -34,7 +34,8 @@ export declare class History {
     get path(): string;
     get hash(): string;
     get href(): string;
-    search(key: string): string;
+    get search(): string;
+    getSearch(key: string): string;
     back(is?: RegExp | BackChk, def?: string, scrollFirst?: boolean): this;
     forward(): this;
     go(delta: number): this;
