@@ -93,8 +93,8 @@ export class History {
   }
 
   @cache get url (): string {
-    const {locales, _url} = this
-    return locales ? _url.replace(new RegExp(`^/(${locales})((/)|(\\?|#|$))`), '/$4') : _url
+    const { locales, _url } = this
+    return decodeURI(locales ? _url.replace(new RegExp(`^/(${locales})((/)|(\\?|#|$))`), '/$4') : _url)
   }
   @cache get path (): string {
     return this.url.replace(/[?#].*/, '')

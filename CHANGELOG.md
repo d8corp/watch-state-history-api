@@ -2,6 +2,10 @@
 
 ## v1.4
 
+### v1.4.2 [![14.09.2022](https://img.shields.io/date/1663166362)](https://github.com/d8corp/watch-state-history-api/tree/v1.4.2)
+
+- add url decoding
+
 ### v1.4.1 [![14.09.2022](https://img.shields.io/date/1663154237)](https://github.com/d8corp/watch-state-history-api/tree/v1.4.1)
 
 - change readme
