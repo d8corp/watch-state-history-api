@@ -7,12 +7,14 @@ export default function setSearch (url: string, key: string | Record<string, str
     }
     return url
   }
+
   if (value === undefined) {
-    const {path = '', search = '', hash = ''} = parseUrl(url)
+    const { path = '', search = '', hash = '' } = parseUrl(url)
     const newSearch = search.replace(new RegExp(`(^|&)${key}(=[^&]*)?(&|$)`), '&').replace(/(^&|&$)/, '')
     return path + (newSearch ? '?' + newSearch : '') + (hash ? '#' + hash : '')
   }
-  const {path = '', search = '', hash = ''} = parseUrl(url)
+
+  const { path = '', search = '', hash = '' } = parseUrl(url)
   let newSearch = ''
 
   const containsKey = new RegExp(`(^|&)${key}(=|&|$)`).test(search)
@@ -23,5 +25,6 @@ export default function setSearch (url: string, key: string | Record<string, str
   } else {
     newSearch = `${search ? search + '&' : ''}${key}${postKey}`
   }
+
   return path + (newSearch ? '?' + newSearch : '') + (hash ? '#' + hash : '')
 }
