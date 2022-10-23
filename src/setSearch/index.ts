@@ -1,2 +1,2 @@
-export {default} from './setSearch'
+export { default } from './setSearch'
 export * from './setSearch'

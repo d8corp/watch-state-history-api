@@ -35,12 +35,12 @@ describe('setSearch', () => {
     expect(setSearch('/path/1?key1=value&key&key2', 'key')).toBe('/path/1?key1=value&key2')
   })
   it('object', () => {
-    expect(setSearch('/', {key: ''})).toBe('/?key')
-    expect(setSearch('/', {key: 'value'})).toBe('/?key=value')
-    expect(setSearch('', {key: 'value'})).toBe('?key=value')
-    expect(setSearch('?key', {key: undefined, test: 1})).toBe('?test=1')
+    expect(setSearch('/', { key: '' })).toBe('/?key')
+    expect(setSearch('/', { key: 'value' })).toBe('/?key=value')
+    expect(setSearch('', { key: 'value' })).toBe('?key=value')
+    expect(setSearch('?key', { key: undefined, test: 1 })).toBe('?test=1')
   })
   it('boolean', () => {
-    expect(setSearch('/', {key: true})).toBe('/?key=true')
+    expect(setSearch('/', { key: true })).toBe('/?key=true')
   })
 })

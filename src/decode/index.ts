@@ -1,2 +1,2 @@
-export {default} from './decode'
+export { default } from './decode'
 export * from './decode'

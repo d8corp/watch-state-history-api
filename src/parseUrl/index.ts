@@ -1,2 +1,2 @@
-export {default} from './parseUrl'
+export { default } from './parseUrl'
 export * from './parseUrl'

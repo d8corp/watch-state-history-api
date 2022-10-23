@@ -1,6 +1,10 @@
-import History, {scroll} from '.'
-import {Watch} from 'watch-state'
-import {version} from './package.json'
+/* global location */
+
+import { Watch } from 'watch-state'
+
+import { version } from './package.json'
+
+import History, { scroll } from '.'
 
 let history = new History()
 
@@ -105,7 +109,7 @@ describe('history-api', () => {
     resetHistory('/')
     expect(history.state).toEqual({
       key,
-      steps: []
+      steps: [],
     })
     expect(history.state).not.toBe(window.history.state)
   })
@@ -130,8 +134,8 @@ describe('history-api', () => {
         key,
         steps: [{
           position: 0,
-          url: '/'
-        }]
+          url: '/',
+        }],
       }])
 
       history.push('/')
@@ -145,23 +149,23 @@ describe('history-api', () => {
         key,
         steps: [{
           position: 0,
-          url: '/'
-        }]
+          url: '/',
+        }],
       }, {
         key,
         steps: [
           {
             position: 0,
-            url: '/'
+            url: '/',
           }, {
             position: 0,
-            url: '/test'
-          }
-        ]
+            url: '/test',
+          },
+        ],
       }])
     })
     it('same url', () => {
-      const {length} = history.state.steps
+      const { length } = history.state.steps
       history.push('/')
       expect(history.state.steps.length).toBe(length)
     })
@@ -176,14 +180,14 @@ describe('history-api', () => {
         key,
         steps: [{
           position: 0,
-          url: '/'
+          url: '/',
         }, {
           position: 0,
-          url: '/test'
+          url: '/test',
         }, {
           position: 100,
-          url: '/'
-        }]
+          url: '/',
+        }],
       })
     })
     it('same url', () => {
@@ -274,7 +278,6 @@ describe('history-api', () => {
 
     history.push('/test?key=1')
 
-
     new Watch(() => result.push(history.search))
 
     expect(history.search).toBe('key=1')
@@ -302,7 +305,6 @@ describe('history-api', () => {
     const result = []
 
     history.push('/test?key=1')
-
 
     new Watch(() => result.push(history.getSearch('key')))
 

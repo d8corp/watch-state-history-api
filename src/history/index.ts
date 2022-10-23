@@ -1,2 +1,2 @@
-export {default} from './history'
+export { default } from './history'
 export * from './history'

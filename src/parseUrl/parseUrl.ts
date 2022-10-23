@@ -11,7 +11,7 @@ function parseUrl (url: string): ParsedUrl {
   return {
     path: match[1],
     search: match[3],
-    hash: match[5]
+    hash: match[5],
   }
 }
 
@@ -19,5 +19,5 @@ export default parseUrl
 
 export {
   ParseUrlReg,
-  ParsedUrl
+  ParsedUrl,
 }

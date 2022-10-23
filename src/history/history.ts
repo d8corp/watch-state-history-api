@@ -1,7 +1,10 @@
-import {Cache} from 'watch-state'
-import {cache, state, event} from '@watch-state/decorators'
+/* global location */
+
+import { cache, event, state } from '@watch-state/decorators'
+import { Cache } from 'watch-state'
 import scroll from 'web-scroll'
-import {version} from '../package.json'
+
+import { version } from '../package.json'
 
 export type Step = {
   url: string
@@ -20,17 +23,17 @@ export class History {
     this.key = key
     this.defaultState = {
       key,
-      steps: []
+      steps: [],
     }
 
-    const {state} = window.history
+    const { state } = window.history
     if (state?.key === key) {
       this.state = state
     } else {
       this.state = this.defaultState
     }
 
-    const listener = ({state}) => this.onChange(state)
+    const listener = ({ state }) => this.onChange(state)
     window.addEventListener('popstate', listener)
     this.destructor = () => window.removeEventListener('popstate', listener)
   }
@@ -48,7 +51,7 @@ export class History {
   @state protected _url: string = location.pathname + location.search + location.hash
 
   @event protected onChange (state: State) {
-    const {pathname, search, hash} = location
+    const { pathname, search, hash } = location
     const oldState = this.state
     this.state = state && this.key === state.key ? state : this.defaultState
     this._url = pathname + search + hash
@@ -64,30 +67,32 @@ export class History {
   }
 
   @cache get locale (): string {
-    const {locales} = this
+    const { locales } = this
     if (locales) {
       const match = this._url.match(new RegExp(`^/(${locales})(/|\\?|#|$)`))
       return match ? match[1] : ''
     }
     return ''
   }
+
   set locale (locale: string) {
-    const {locales, locale: currentLocale} = this
+    const { locales, locale: currentLocale } = this
     if (locales && locale !== currentLocale && (!locale || new RegExp(`^(${locales})$`).test(locale))) {
-      const {url, state: {steps}} = this
+      const { url, state: { steps } } = this
       const position = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
       this.changeState(newUrl => {
         window.history.pushState({
           key: this.key,
           steps: [...steps, {
             url,
-            position
-          }]
+            position,
+          }],
         }, null, newUrl)
         this.onChange(window.history.state)
       }, locale, url, -1)
     }
   }
+
   get localUrl (): string {
     return this._url
   }
@@ -96,21 +101,26 @@ export class History {
     const { locales, _url } = this
     return decodeURI(locales ? _url.replace(new RegExp(`^/(${locales})((/)|(\\?|#|$))`), '/$4') : _url)
   }
+
   @cache get path (): string {
     return this.url.replace(/[?#].*/, '')
   }
+
   @cache get hash (): string {
     const math = this.url.match(/^[^#]*#(.+)/)
     return math ? math[1] : ''
   }
+
   @cache get href (): string {
     return this.url.replace(/#.*/, '')
   }
+
   @cache get search (): string {
     const math = this.url.match(/^[^#?]*\?([^#]+)/)
     return math ? math[1] : ''
   }
-  getSearch (key: string): string  {
+
+  getSearch (key: string): string {
     return this.get(`^[^?#]*\\?([^#]*\\&)*${key}=([^#&]*)`, 2)
   }
 
@@ -120,7 +130,7 @@ export class History {
         const regexp = is
         is = url => regexp.test(url)
       }
-      const {steps} = this.state
+      const { steps } = this.state
       for (let i = steps.length - 1; i > -1; i--) {
         const step = steps[i]
         if (is(step.url)) {
@@ -129,21 +139,24 @@ export class History {
       }
       this.push(def, 0, scrollFirst)
     } else if (scrollFirst) {
-      const {steps} = this.state
+      const { steps } = this.state
       scroll(steps[steps.length - 1].position, () => window.history.back())
     } else {
       window.history.back()
     }
     return this
   }
+
   forward (): this {
     window.history.forward()
     return this
   }
+
   go (delta: number): this {
     window.history.go(delta)
     return this
   }
+
   replace (url: string, position: number | string = 0, scrollFirst = false): this {
     this.changeState(newUrl => {
       window.history.replaceState(this.state, null, newUrl)
@@ -151,8 +164,9 @@ export class History {
     this.onChange(window.history.state)
     return this
   }
+
   push (url: string, position: number | string = 0, scrollFirst = false): this {
-    const {url: currentUrl, state: {steps}} = this
+    const { url: currentUrl, state: { steps } } = this
     const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
     this.changeState(newUrl => {
       if (currentUrl !== url) {
@@ -160,14 +174,15 @@ export class History {
           key: this.key,
           steps: [...steps, {
             url: currentUrl,
-            position: top
-          }]
+            position: top,
+          }],
         }, null, newUrl)
         this.onChange(window.history.state)
       }
     }, this.locale, url, position, scrollFirst)
     return this
   }
+
   is (reg: string): boolean {
     if (!this.isCache) {
       this.isCache = {}
@@ -178,6 +193,7 @@ export class History {
     }
     return this.isCache[reg].value
   }
+
   get (reg: string, index = 0, defaultValue = ''): string {
     if (!this.getCache) {
       this.getCache = {}
