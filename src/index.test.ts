@@ -1,6 +1,6 @@
 import { Watch } from 'watch-state'
 
-import { historyPush, locationPathname, locationURL, updateHistoryState } from '.'
+import { historyPush, locationPath, locationURL, updateHistoryState } from '.'
 
 function resetHistory (url = '/') {
   window.history.pushState(null, '', url)
@@ -11,7 +11,7 @@ describe('history-api', () => {
   describe('locationHref', () => {
     it('simple', () => {
       resetHistory('/')
-      expect(locationPathname.value).toBe('/')
+      expect(locationPath.value).toBe('/')
       expect(locationURL.value).toBe('/')
     })
     it('keep slash', async () => {

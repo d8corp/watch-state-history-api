@@ -86,6 +86,81 @@ You can react on History API changes by next store elements:
 
 ---
 
+### locationHref
+
+Returns observable `location.href`
+
+```javascript
+import { Watch } from 'watch-state'
+import { locationHref, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(locationHref.value)
+})
+
+historyPush('/test')
+```
+
+### locationURL
+
+Returns observable `location.pathname + location.search + location.hash`
+
+```javascript
+import { Watch } from 'watch-state'
+import { locationURL, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(locationURL.value)
+})
+
+historyPush('/test')
+```
+
+### locationPath
+
+Returns observable `location.pathname`
+
+```javascript
+import { Watch } from 'watch-state'
+import { locationPath, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(locationPath.value)
+})
+
+historyPush('/test')
+```
+
+### locationSearch
+
+Returns observable `location.search`
+
+```javascript
+import { Watch } from 'watch-state'
+import { locationSearch, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(locationSearch.value)
+})
+
+historyPush('?test=1')
+```
+
+### locationHash
+
+Returns observable `location.hash`
+
+```javascript
+import { Watch } from 'watch-state'
+import { locationHash, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(locationHash.value)
+})
+
+historyPush('#hash')
+```
+
 ### historyMovement
 
 This is a `Cache` returns one of the next string: `back` | `forward` | `same`.
@@ -107,6 +182,21 @@ new Watch(() => {
 historyPush('/test')
 history.back()
 history.forward()
+```
+
+### historyState
+
+Returns observable `history.state`
+
+```javascript
+import { Watch } from 'watch-state'
+import { historyState, historyPush } from '@watch-state/history-api'
+
+new Watch(() => {
+  console.log(historyState.value)
+})
+
+historyPush('/test')
 ```
 
 ## Issues
