@@ -1,5 +1,5 @@
 module.exports = {
-  preset: 'innet-jest',
+  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFiles: ['core-js'],
 }
