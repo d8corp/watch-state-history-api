@@ -7,4 +7,5 @@ require('./locationPath/index.js');
 require('./locationSearch/index.js');
 require('./locationHash/index.js');
 require('./locationURL/index.js');
+require('./urlSearchParams/index.js');
 

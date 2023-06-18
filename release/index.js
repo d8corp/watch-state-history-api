@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 require('./actions/index.js');
 require('./store/index.js');
+require('./utils/index.js');
 var historyPush = require('./actions/historyPush/historyPush.js');
 var historyReplace = require('./actions/historyReplace/historyReplace.js');
 var historyState = require('./store/historyState/historyState.js');
@@ -13,6 +14,8 @@ var locationPath = require('./store/locationPath/locationPath.js');
 var locationSearch = require('./store/locationSearch/locationSearch.js');
 var locationHash = require('./store/locationHash/locationHash.js');
 var locationURL = require('./store/locationURL/locationURL.js');
+var urlSearchParams = require('./store/urlSearchParams/urlSearchParams.js');
+var getSearchParam = require('./utils/getSearchParam/getSearchParam.js');
 
 
 
@@ -27,3 +30,5 @@ exports.locationPath = locationPath.locationPath;
 exports.locationSearch = locationSearch.locationSearch;
 exports.locationHash = locationHash.locationHash;
 exports.locationURL = locationURL.locationURL;
+exports.urlSearchParams = urlSearchParams.urlSearchParams;
+exports.getSearchParam = getSearchParam.getSearchParam;
