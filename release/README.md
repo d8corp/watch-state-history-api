@@ -1,21 +1,47 @@
-<a href="https://www.npmjs.com/package/watch-state">
-  <img src="https://raw.githubusercontent.com/d8corp/watch-state/v3.3.3/img/logo.svg" align="left" width="90" height="90" alt="Watch-State logo by Mikhail Lysikov">
-</a>
+<br>
+<p align="center">
+  <a href="https://www.npmjs.com/package/watch-state">
+    <img width="200" height="200" src="https://raw.githubusercontent.com/d8corp/watch-state/v3.3.3/img/logo.svg" alt="Watch-State logo by Mikhail Lysikov">
+  </a>
+</p>
 
-# &nbsp; @watch-state/history-api
+<h1 align="center">@watch-state/history-api</h1>
 
-&nbsp;  
+<p align="center">Browser History API with <a href="https://www.npmjs.com/package/watch-state" target="_blank">watch-state</a></p>
 
-[![NPM](https://img.shields.io/npm/v/@watch-state/history-api.svg)](https://www.npmjs.com/package/@watch-state/history-api)
-[![minzipped size](https://img.shields.io/bundlephobia/minzip/@watch-state/history-api)](https://bundlephobia.com/result?p=@watch-state/history-api)
-[![downloads](https://img.shields.io/npm/dm/@watch-state/history-api.svg)](https://www.npmtrends.com/@watch-state/history-api)
-[![changelog](https://img.shields.io/badge/changelog-⋮-brightgreen)](https://changelogs.xyz/@watch-state/history-api)
-[![license](https://img.shields.io/npm/l/@watch-state/history-api)](https://github.com/d8corp/watch-state-history-api/blob/main/LICENSE)
+<br>
 
-Browser History API with [watch-state](https://www.npmjs.com/package/watch-state).
+<div align="center">
+  <a href="https://www.npmjs.com/package/@watch-state/history-api" target="_blank">
+    <img src="https://img.shields.io/npm/v/@watch-state/history-api.svg" alt="@watch-state/history-api npm">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api" target="_blank">
+    <img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white" alt="@watch-state/history-api source code">
+  </a>
+  <a href="https://www.npmtrends.com/@watch-state/history-api" target="_blank">
+    <img src="https://img.shields.io/npm/dm/@watch-state/history-api.svg" alt="@watch-state/history-api downloads">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api/tree/main/release" target="_blank">
+    <img src="https://packagephobia.com/badge?p=@watch-state/history-api" alt="@watch-state/history-api install size">
+  </a>
+  <a href="https://www.typescriptlang.org" target="_blank">
+    <img src="https://img.shields.io/npm/types/@watch-state/history-api" alt="TypeScript">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/npm/l/@watch-state/history-api" alt="@watch-state/history-api license">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api/blob/main/CHANGELOG.md" target="_blank">
+    <img src="https://img.shields.io/badge/Changelog-⋮-brightgreen" alt="@watch-state/history-api changelog">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api/issues" target="_blank">
+    <img src="https://img.shields.io/github/issues-raw/d8corp/watch-state-history-api" alt="Open issues">
+  </a>
+  <a href="https://github.com/d8corp/watch-state-history-api/pulls" target="_blank">
+    <img src="https://img.shields.io/github/issues-pr-raw/d8corp/watch-state-history-api" alt="Pull requests">
+  </a>
+</div>
 
-[![stars](https://img.shields.io/github/stars/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/stargazers)
-[![watchers](https://img.shields.io/github/watchers/d8corp/watch-state-history-api?style=social)](https://github.com/d8corp/watch-state-history-api/watchers)
+<br>
 
 ## Install
 

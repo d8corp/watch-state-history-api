@@ -7,7 +7,7 @@ require('../historyState/index.js');
 var historyState = require('../historyState/historyState.js');
 
 var _lastLength = 0;
-var historyMovement = new watchState.Cache(function () {
+var historyMovement = new watchState.Compute(function () {
     var currentLength = historyState.historyState.value.steps.length;
     var lastLength = _lastLength;
     _lastLength = currentLength;

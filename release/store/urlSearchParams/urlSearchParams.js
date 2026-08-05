@@ -6,6 +6,6 @@ var watchState = require('watch-state');
 require('../locationSearch/index.js');
 var locationSearch = require('../locationSearch/locationSearch.js');
 
-var urlSearchParams = new watchState.Cache(function () { return new URLSearchParams(locationSearch.locationSearch.value); });
+var urlSearchParams = new watchState.Compute(function () { return new URLSearchParams(locationSearch.locationSearch.value); });
 
 exports.urlSearchParams = urlSearchParams;

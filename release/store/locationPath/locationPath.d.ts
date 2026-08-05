@@ -1,2 +1,2 @@
-import { Cache } from 'watch-state';
-export declare const locationPath: Cache<string>;
+import { Compute } from 'watch-state';
+export declare const locationPath: Compute<string>;

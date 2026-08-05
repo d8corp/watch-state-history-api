@@ -1,2 +1,2 @@
-import { Cache } from 'watch-state';
-export declare const locationURL: Cache<string>;
+import { Compute } from 'watch-state';
+export declare const locationURL: Compute<string>;
