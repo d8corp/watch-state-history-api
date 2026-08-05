@@ -1,5 +1,5 @@
-import { Cache } from 'watch-state'
+import { Compute } from 'watch-state'
 
 import { historyState } from '../historyState'
 
-export const locationPath = new Cache(() => historyState.value && window.location.pathname)
+export const locationPath = new Compute(() => historyState.value && window.location.pathname)

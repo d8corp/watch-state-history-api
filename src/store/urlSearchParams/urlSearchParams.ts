@@ -1,5 +1,5 @@
-import { Cache } from 'watch-state'
+import { Compute } from 'watch-state'
 
 import { locationSearch } from '../locationSearch'
 
-export const urlSearchParams = new Cache(() => new URLSearchParams(locationSearch.value))
+export const urlSearchParams = new Compute(() => new URLSearchParams(locationSearch.value))

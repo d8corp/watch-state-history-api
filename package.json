@@ -1,6 +1,6 @@
 {
   "name": "@watch-state/history-api",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0",
   "description": "Browser History API with watch-state",
   "main": "index.js",
   "module": "index.es6.js",
@@ -54,7 +54,7 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "innetjs": "^2.5.3",
+    "innetjs": "^3.2.3",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "ts-jest": "^29.1.0",
@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "tslib": "^2.5.2",
-    "watch-state": "^3.5.0-alpha.0",
+    "watch-state": "^3.6.2",
     "web-scroll": "^1.1.0"
   }
 }
